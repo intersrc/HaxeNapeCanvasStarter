@@ -13,22 +13,22 @@ class G {
     // public static var stage:Stage;
     // public static var space:Space;
 
-    public static inline var stageWidth:Int = 375 * 2;
-    public static inline var stageHeight:Int = 667 * 2;
+    private static inline var canvasWidth:Int = 375;
+    private static inline var canvasHeight:Int = 667;
+    private static inline var scale:Int = 1;
+    public static inline var stageWidth:Int = canvasWidth * scale;
+    public static inline var stageHeight:Int = canvasHeight * scale;
 
     public static function autoSize():Void {
         //auto size
         var canvas:CanvasElement = cast Browser.document.getElementById('main-canvas');
 
-        canvas.style.width = (canvas.width = stageWidth) + 'px';
-        canvas.style.height = (canvas.height = stageHeight) + 'px';
-        var div:DivElement = cast Browser.document.getElementById('main-container');
-        div.style.position = 'absolute';
-        div.style.left = '50%';
-        div.style.top = '50%';
-        div.style.width = canvas.style.width;
-        div.style.height = canvas.style.height;
-        div.style.marginLeft = -stageWidth / 2 + 'px';
-        div.style.marginTop = -stageHeight / 2 + 'px';
+        canvas.width = stageWidth;
+        canvas.height = stageHeight;
+
+        canvas.style.width = '${canvasWidth}px';
+        canvas.style.height = '${canvasHeight}px';
+        canvas.style.marginLeft = '${-canvasWidth / 2}px';
+        canvas.style.marginTop = '${-canvasHeight / 2}px';
     }
 }
