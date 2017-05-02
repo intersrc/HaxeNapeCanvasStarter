@@ -2,25 +2,27 @@
 
 ## Build & Dev
 
-Install deps
+### Install deps
 
 ```
 yarn
 ```
 
-Set createjs-full to forked version:
+If fail to install haxe, delete `~/haxe`, and try `npm install haxeshim -g && npm install switchx -g && switchx`
+
+### Set createjs-full to forked version:
 
 ```
 yarn prepare
 ```
 
-Build
+### Build
 
 ```
 yarn build
 ```
 
-Dev
+### Dev
 
 ```
 yarn dev
